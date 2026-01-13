@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitAI - Your AI-Powered Fitness Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - NOT sticky */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo-fit {
+            color: #ffffff;
+        }
+
+        .logo-ai {
+            color: #D81B60;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #D81B60;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: #D81B60;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            margin-bottom: 60px;
+        }
+
+        .download-button:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
+        }
+
+        /* Screenshot Grid - 2 on top */
+        .screenshots-top {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .screenshot-container {
+            text-align: center;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #121212;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: left;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-description {
+            color: #b0b0b0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Screenshots Bottom - 3 phones */
+        .screenshots-bottom {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+
+        .screenshots-bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .screenshots-bottom-grid .screenshot-container img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: #121212;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .store-badge {
+            height: 50px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #D81B60;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .screenshots-top {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 350px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .screenshots-bottom-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .features-title,
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .screenshots-bottom-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-fit">Fit</span><span class="logo-ai">AI</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/terms">Terms</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="mailto:support@fitai-app.com">Support</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>FitAI</h1>
+                <p class="hero-subtitle">The simplest, most powerful way to achieve your fitness goals.<br>AI-powered workouts designed just for you.</p>
+                <a href="#download" class="download-button">Download on iOS</a>
+
+                <!-- Top Screenshots - 2 phones -->
+                <div class="screenshots-top">
+                    <div class="screenshot-container">
+                        <img src="images/screenshot1framed.png" alt="FitAI App Screenshot 1">
+                    </div>
+                    <div class="screenshot-container">
+                        <img src="images/screenshot2framed.png" alt="FitAI App Screenshot 2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="features-title">Train Smarter, Not Harder</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">AI-Powered Workouts</h3>
+                        <p class="feature-description">Get personalized workout plans tailored to your fitness level, goals, and available equipment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Progress Tracking</h3>
+                        <p class="feature-description">Monitor your strength gains, weight progress, and workout history with detailed analytics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Exercise Library</h3>
+                        <p class="feature-description">Access thousands of exercises with video demonstrations and proper form instructions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Muscle Group Focus</h3>
+                        <p class="feature-description">Target specific muscle groups with intelligent exercise selection and volume recommendations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Workout History</h3>
+                        <p class="feature-description">Review past workouts, track your personal records, and see your consistency over time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Offline Access</h3>
+                        <p class="feature-description">Train anywhere without internet. All your workouts and data sync when you're back online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Screenshots - 3 phones -->
+        <section class="screenshots-bottom">
+            <div class="container">
+                <div class="screenshots-bottom-grid">
+                    <div class="screenshot-container">
+                        <img src="images/screenshot3framed.png" alt="FitAI Workout Plan">
+                    </div>
+                    <div class="screenshot-container">
+                        <img src="images/screenshot4framed.png" alt="FitAI Progress Tracking">
+                    </div>
+                    <div class="screenshot-container">
+                        <img src="images/screenshot5framed.png" alt="FitAI Analytics">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="download" class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Fitness?</h2>
+                <p>Simple, AI-powered workouts. Track your progress and achieve your goals.</p>
+                <p style="margin-bottom: 25px; font-size: 16px; color: #888;">No sign-up required. Your data stays private.</p>
+                <a href="#" target="_blank">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="store-badge">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2026 FitAI. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="/terms">Terms & Conditions</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="mailto:support@fitai-app.com">Support</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
