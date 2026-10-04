@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Screeny</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #D3E22B;
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .last-updated {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #e0e0e0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #b0b0b0;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: #b0b0b0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #D3E22B;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: #1a1a1a;
+            border-left: 4px solid #D3E22B;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: #1a1a1a;
+            border-left: 4px solid #D3E22B;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/screeny/privacy" class="logo">Screeny</a>
+                <ul class="nav-links">
+                    <li><a href="/screeny/terms">Terms</a></li>
+                    <li><a href="/screeny/privacy">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Support</h1>
+            <p class="last-updated">We usually reply within two business days.</p>
+
+            <div class="highlight-box">
+                <p><strong>Email:</strong> <a href="mailto:support@fitai-app.com">support@fitai-app.com</a></p>
+            </div>
+
+            <h2>Common questions</h2>
+            <h3>Blocking does not work</h3>
+            <p>Open iOS Settings, then Screen Time, and make sure Screen Time is turned on. Then reopen Screeny and allow Screen Time access when asked.</p>
+            <h3>How do I change the blocked apps?</h3>
+            <p>Open the Settings tab in Screeny and choose Blocked apps.</p>
+            <h3>Manage or cancel Screeny Pro</h3>
+            <p>Open iOS Settings, tap your name, then Subscriptions. You can also restore purchases from Screeny's Settings tab.</p>
+
+            <p>Read our <a href="/screeny/privacy">Privacy Policy</a> and <a href="/screeny/terms">Terms of Use</a>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2026 Screeny. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
